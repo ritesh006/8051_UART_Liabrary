@@ -1,0 +1,63 @@
+C51 COMPILER V9.60.0.0   MAIN                                                              07/24/2022 19:56:43 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          /* Main UART.C */
+   2          
+   3          #include <reg51.h>
+   4          #include <string.h>
+   5          #include "header.h"
+   6          
+   7          void main()
+   8          {
+   9   1        unsigned int i, receive_data;
+  10   1        unsigned char array[20], *p ;  /* delcare array for string receive function */
+  11   1        
+  12   1        uart_init(9600);  /* uart initialization */
+  13   1        lcd_init();
+  14   1      
+  15   1        while (1)
+  16   1        {
+  17   2          
+  18   2          
+  19   2          
+  20   2          /* receiving data from serial terminal microcontroller */
+  21   2          delay_ms(500); /* delay is mandatory without that lcd funtion not work */
+  22   2          receive_data = uart_rx();
+  23   2          uart_tx(receive_data);              /* for loopback to what */
+  24   2      //    
+  25   2          
+  26   2      /* use proteus 7 version for simulation in UART rx function not 
+  27   2         working in proteus 8 */
+  28   2          
+  29   2          
+  30   2        
+  31   2        
+  32   2              
+  33   2        
+  34   2      
+  35   2            }
+  36   1      }
+*** WARNING C280 IN LINE 9 OF main.c: 'i': unreferenced local variable
+*** WARNING C280 IN LINE 10 OF main.c: 'array': unreferenced local variable
+*** WARNING C280 IN LINE 10 OF main.c: 'p': unreferenced local variable
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     30    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      27
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  3 WARNING(S),  0 ERROR(S)
