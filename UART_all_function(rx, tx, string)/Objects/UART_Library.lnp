@@ -1,4 +1,6 @@
 ".\Objects\main.obj",
-".\Objects\UART_driver.obj" 
+".\Objects\UART_driver.obj",
+".\Objects\delay.obj",
+".\Objects\lcd.obj" 
 TO ".\Objects\UART_Library" 
 PRINT(".\Listings\UART_Library.m51")
